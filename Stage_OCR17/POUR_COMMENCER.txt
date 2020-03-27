@@ -1,0 +1,38 @@
+##################################
+          PRISE EN MAIN 
+##################################
+
+(Déjà, bienvenue de loin! Pas très sympa comme début de stage, mais on fera au mieux pour que ça se passe bien. 
+	Jean-Baptiste, jbtanguy56@gmail.com --> N'hésite pas à me poser des questions par mail !!)
+
+1.	Dans ./corpora/extract_mazarinades/pdfs/, il y a deux répertoires : brut_from_gallica/ et net/ (lesquels contiennent des PDFs issus de Gallica).
+	En téléchargeant des PDFs sur Gallica, deux pages sont ajoutées pages numérisées (= aux "vues") au début du document PDFs. 
+	--> Faire un programme, une fonction ou bien une commande Bash qui permet de découper les PDFs (ceux de brut_from_gallica/) et ne récupérer
+	que les "vraies" numérisations. Dans net/, on a les documents avant nettoyage et après nettoyage.
+	Attention : Certains documents téléchargés sur Gallica n'ont pas ces deux premières pages (cf. un des PDFs dans net/). On commence en ignorant
+	ces cas particuliers et on ajustera plus tard.
+	Ressources : ./corpora/get_pdfs_from_Gallica/ --> contient un tableur et un programme Python (Anaëlle Baledent) permettant de télécharger automatique
+	les documents renseignés dans le tableur grâce à l'API de Gallica. 
+
+2.  Océrisation des PDFs nettoyés. 
+	Outil : Kraken si possible, sinon au choix (Tesseract, OCRopus, Calamari, Transkribus).
+	Modèle d'OCR : par défaut. 
+	--> Réaliser une chaine de traîtement permettant d'appliquer les modèles d'OCR. 
+		- Boucle sur les fichiers d'un dossier à océriser
+		- Transformation des PDFs en JPG si nécessaire
+		- Prétraitement de l'image (binarisation)
+		- Segmentation de l'image (en colones, en lignes, en mots...)
+		- Application du modèle d'OCR
+		- Sauvegarde du résultats dans un dossier dédié
+	"chaine de traitement" : un script doit pouvoir être lancé pour toutes les images d'un dossier subissent les étapes précitées. 
+	Ressources :
+		- Kraken : http://kraken.re/
+		- Commandes Kraken à entrer dans le Terminal (sous mac et sous linux) :
+			Binarisation de l'image : kraken -I <nom_image.jpg> -o _binarized.jpg binarize 
+									  (le "_binarized.jpg" signifie qu'on ajoute ceci en suffixe au nom de l'image <nom_image.jpg>)
+			Segmentation et OCR : kraken -I <nom_image_binarized.jpg> -o .txt segment ocr -m <model_name.mlmodel>
+		- Dans ./kraken_models/, il y a deux modèles d'OCR : 
+			- en_best.mlmodel : modèle par défaut (anglais contemporain)
+			- kraken_CORPUS17_SimonGabay : modèle entraîné par Simon Gabay (Université de Neuchâtel, Université de Genève) sur des données française du 
+											XVIIème siècle. 
+											--> https://editiones.hypotheses.org/1958
