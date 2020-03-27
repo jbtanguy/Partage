@@ -36,3 +36,8 @@
 			- kraken_CORPUS17_SimonGabay : modèle entraîné par Simon Gabay (Université de Neuchâtel, Université de Genève) sur des données française du 
 											XVIIème siècle. 
 											--> https://editiones.hypotheses.org/1958
+
+3. Pour récupérer tout ça, dans un Terminal (muni des commandes git) entrer la commande :
+	git clone https://github.com/jbtanguy/Partage.git
+
+	(Si git n'est pas installé, voir : https://git-scm.com/book/fr/v2/D%C3%A9marrage-rapide-Installation-de-Git)
