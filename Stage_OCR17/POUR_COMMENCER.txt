@@ -17,7 +17,7 @@
 2.  Océrisation des PDFs nettoyés. 
 	Outil : Kraken si possible, sinon au choix (Tesseract, OCRopus, Calamari, Transkribus).
 	Modèle d'OCR : par défaut. 
-	--> Réaliser une chaine de traîtement permettant d'appliquer les modèles d'OCR. 
+	--> Réaliser une chaine de traîtement permettant d'appliquer les modèles d'OCR (sur les PDFs nettoyés obtenus en étape 1). 
 		- Boucle sur les fichiers d'un dossier à océriser
 		- Transformation des PDFs en JPG si nécessaire
 		- Prétraitement de l'image (binarisation)
