@@ -15,9 +15,9 @@
 	les documents renseignés dans le tableur grâce à l'API de Gallica. 
 
 2.  Océrisation des PDFs nettoyés. 
-	Outil : Kraken si possible, sinon au choix (Tesseract, OCRopus, Calamari, Transkribus).
-	Modèle d'OCR : par défaut. 
-	--> Réaliser une chaine de traîtement permettant d'appliquer les modèles d'OCR (sur les PDFs nettoyés obtenus en étape 1). 
+	Outils : Au choix : Kraken, Tesseract, OCRopus, Calamari, Transkribus. (En bas, quelques infos pratiques sur Kraken.) 
+	En tester quelques-uns pour se faire la main. 
+	--> Réaliser une chaine de traîtement permettant d'appliquer les modèles d'OCR choisis (sur les PDFs nettoyés obtenus en étape 1). 
 		- Boucle sur les fichiers d'un dossier à océriser
 		- Transformation des PDFs en JPG si nécessaire
 		- Prétraitement de l'image (binarisation)
