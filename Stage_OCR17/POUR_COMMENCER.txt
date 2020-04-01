@@ -28,9 +28,10 @@
 	Ressources :
 		- Kraken : http://kraken.re/
 		- Commandes Kraken à entrer dans le Terminal (sous mac et sous linux) :
-			Binarisation de l'image : kraken -I <nom_image.jpg> -o _binarized.jpg binarize 
+			Binarisation de l'image : kraken -I <dossier/*.jpg> -o _binarized.jpg binarize 
 									  (le "_binarized.jpg" signifie qu'on ajoute ceci en suffixe au nom de l'image <nom_image.jpg>)
-			Segmentation et OCR : kraken -I <nom_image_binarized.jpg> -o .txt segment ocr -m <model_name.mlmodel>
+									  (<dossier/*.jpg> : ça veut dire qu'on va dans le dossier et qu'on prend à la fois tous les fichiers jpg qui s'y trouvent)
+			Segmentation et OCR : kraken -I <dossier/*_binarized.jpg> -o .txt segment ocr -m <model_name.mlmodel>
 		- Dans ./kraken_models/, il y a deux modèles d'OCR : 
 			- en_best.mlmodel : modèle par défaut (anglais contemporain)
 			- kraken_CORPUS17_SimonGabay : modèle entraîné par Simon Gabay (Université de Neuchâtel, Université de Genève) sur des données française du 
