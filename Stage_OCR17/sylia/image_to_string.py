@@ -18,7 +18,7 @@ def main():
         inputPath = os.path.join(path, imageName)
         img = Image.open(inputPath)
         # applying ocr using pytesseract for python
-        text = pt.image_to_string(img, lang="fra")
+        text = pt.image_to_string(img, lang="eng")
   
         
         imagePath = inputPath[0:-4]
