@@ -32,8 +32,11 @@ for path_to_pdf in path_to_pdf_list:
     		img_path = root_name_jpg + str(idx) + '.jpg'
     		page.save(img_path, 'JPEG')
     		img = Image.open(img_path) 
-    		txt = pt.image_to_string(img, lang="eng")
-    		txt_path = root_name_txt + str(idx) + '.txt'
-    		write_ocr_result(file_path=txt_path, ocr_result=txt)
+    		txt_eng = pt.image_to_string(img, lang="eng")
+            txt_fra = pt.image_to_string(img, lang="fra")
+    		txt_path_eng = root_name_txt + str(idx) + '_eng.txt'
+            txt_path_fra = root_name_txt + str(idx) + '_fra.txt'
+    		write_ocr_result(file_path=txt_path_eng, ocr_result=txt_eng)
+            write_ocr_result(file_path=txt_path_fra, ocr_result=txt_fra)
 
     pages = []
