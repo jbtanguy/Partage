@@ -32,8 +32,8 @@ if __name__ == "__main__":
     dpi = options.dpi
     """
 
-    path_to_pdf_dir = './../corpora/get_pdfs_from_gallica/corpus/mazarinades/extract/' 
-    work_dir = './../JBT/png/'
+    path_to_pdf_dir = './../corpora/get_pdfs_from_gallica/corpus/mazarinades/pdf/' 
+    work_dir = './../JBT/ocr_workdir/'
     dpi = 300
     path_to_pdf_list = glob.glob(path_to_pdf_dir + '*pdf') 
 
